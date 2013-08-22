@@ -1,6 +1,9 @@
 avconv-GUI
 ==========
 
+Description
+-----------
+
 python command user interface for avconv
 
 License
