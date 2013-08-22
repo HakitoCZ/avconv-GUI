@@ -1,10 +1,10 @@
-avconv-GUI
+avconv-CLI
 ==========
 
 Description
 -----------
 
-python command user interface for avconv
+python command line interface for avconv
 
 License
 -------
