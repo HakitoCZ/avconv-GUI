@@ -1,0 +1,3 @@
+# To ignore temporary and swap files made by Vim.
+.avconv-cli.py.swp
+
