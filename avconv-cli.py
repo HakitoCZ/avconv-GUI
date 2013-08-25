@@ -12,3 +12,4 @@ for x in song_list:
 for i in song_list:
     print('avconv', '-i', i, '-b', '96k', i[:-3] + 'm4a')
 
+# print for subprocess.Popen
