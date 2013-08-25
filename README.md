@@ -1,4 +1,4 @@
-avconv-CLI
+avconv-cli
 ==========
 
 Description
