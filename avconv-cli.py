@@ -8,5 +8,5 @@ song_list = glob.glob('*.mp3')
 for x in song_list:
     print(x)
 
-os.mkdir(converted)
+os.mkdir('converted')
 
