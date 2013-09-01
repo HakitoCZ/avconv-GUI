@@ -3,19 +3,43 @@
 import glob
 import subprocess
 import os
+import sys
 
 
-bitrate_input = int(input('\nHello, this script will convert mp3 songs in current directory to m4a audio format.\nMake sure in current dir is no folder called "converted". If it is, move it elsewhere or rename it.\nIf there already are some m4a files in current directory, move them.\n\nNow set number of bitrate, in kbps. If you want to use default, insert 0: '))
+print('\nHello, this script will convert mp3 songs in current directory to requested audio format.')
+print('Make sure in current dir is no folder called "converted". If it is, move it elsewhere or rename it.')
+print('If there already are some files in requested format in current directory, move them.')
+
+output_file = int(input('\nNow select requested output format:\n1 - M4A\n2 - OGG\n3 - WAV\n4 - AAC\n4 - MP3\n'))
+
+bitrate_input = int(input('\nNow set number of bitrate, in kbps. If you want to use default, insert 0\n'))
+
 
 song_list = glob.glob('*.mp3')
 
 os.mkdir('converted')
 
+
+if output_file == 1:
+    out = 'm4a'
+elif output_file == 2:
+    out = 'ogg'
+elif output_file == 3:
+    out = 'wav'
+elif output_file == 4:
+    out = 'mp3'
+else:
+     print('You inserted unknown request, run program and try it again.')
+
+
 if bitrate_input == 0:
     bitrate_input = 96
 elif bitrate_input < 0:
     print('Bitrate have to be more than 0!')
+else:
+     print('You inserted unknown request, run program and try it again.')
+
 
 for i in song_list:
-    subprocess.call(['avconv', '-i', i, '-b', str(bitrate_input) + 'k', 'converted/' + i[:-3] + 'm4a'])
+    subprocess.call(['avconv', '-i', i, '-b', str(bitrate_input) + 'k', 'converted/' + i[:-3] + out])
 
