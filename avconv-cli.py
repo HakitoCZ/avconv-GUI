@@ -54,13 +54,15 @@ elif bitrate_input == 4:
 else:
     sys.exit('You inserted unknown request, run program and try it again.')
 
-print('Selected quality is', bit, 'kb/s')
+print('Selected quality is', bit, 'kb/s\n')
 
 
 
 os.mkdir('converted')
 
 print('Creating directory "converted"')
+
+
 
 for i in song_list:
     subprocess.call(['avconv', '-i', i, '-b', bit + 'k', 'converted/' + i[:-3] + out])
